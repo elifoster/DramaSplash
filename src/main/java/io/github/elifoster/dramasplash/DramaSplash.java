@@ -15,8 +15,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 @Mod(name = "Drama Generator: Ruby Edition Splash", modid = "elifosterDramaSplash", version = "1.0.0")
 public class DramaSplash {
@@ -41,25 +39,18 @@ public class DramaSplash {
     }
 
     /**
-     * Gets the splash from mc-drama.herokuapp.com
-     * If it errors, or for some reason cannot find the drama, it will use a default "Check your
-     * logs!" message.
-     * @return
+     * Gets the splash from mc-drama's API
+     * @return The random drama, or "Check your logs!" if there is an MalformedURLException or
+     * IOException.
      */
     private String getSplash() {
         try {
-            URL url = new URL("http://mc-drama.herokuapp.com");
+            URL url = new URL("http://mc-drama.herokuapp.com/raw");
             BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
 
-            String line;
-            Pattern pattern = Pattern.compile("<h2> (.*?)</h2>");
-            while ((line = in.readLine()) != null) {
-                Matcher matcher = pattern.matcher(line);
-                if (matcher.find()) {
-                    return matcher.group(1);
-                }
-            }
+            String line = in.readLine();
             in.close();
+            return line;
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
