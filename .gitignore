@@ -22,3 +22,5 @@ eclipse/
 # IDE
 *.iml
 .idea/
+*.ipr
+*.iws

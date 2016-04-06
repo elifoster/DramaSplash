@@ -1,4 +1,8 @@
 # Changelog
+## Version 2
+### 2.0.0
+* Update to Minecraft 1.8.9.
+
 ## Version 1
 ### 1.1.0
 * Update to use the new API at mc-drama/raw. This improves loading performance as it does not

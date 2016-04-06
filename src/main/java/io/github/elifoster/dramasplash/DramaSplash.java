@@ -1,26 +1,25 @@
 package io.github.elifoster.dramasplash;
 
-import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.ObfuscationReflectionHelper;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.TickEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiMainMenu;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
 import java.net.URL;
 
-@Mod(name = "Drama Generator: Ruby Edition Splash", modid = "elifosterDramaSplash", version = "1.0.0")
+@Mod(name = "Drama Generator: Ruby Edition Splash", modid = "elifosterDramaSplash", version = "2.0.0")
 public class DramaSplash {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-        FMLCommonHandler.instance().bus().register(this);
+        MinecraftForge.EVENT_BUS.register(this);
     }
 
     private boolean isSplashSet = false;
@@ -40,8 +39,7 @@ public class DramaSplash {
 
     /**
      * Gets the splash from mc-drama's API
-     * @return The random drama, or "Check your logs!" if there is an MalformedURLException or
-     * IOException.
+     * @return The random drama, or "Check your logs!" if there is an IOException.
      */
     private String getSplash() {
         try {
@@ -51,8 +49,6 @@ public class DramaSplash {
             String line = in.readLine();
             in.close();
             return line;
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
