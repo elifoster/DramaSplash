@@ -1,5 +1,8 @@
 # Changelog
 ## Version 2
+### 2.0.2
+* Set the acceptedMinecraftVersions parameter to support 1.10.2.
+
 ### 2.0.1
 * Set the acceptedMinecraftVersions parameter to support 1.9 and 1.10.
 
