@@ -18,7 +18,7 @@ buildscript {
 
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-version = "2.0.2"
+version = "2.0.3"
 group = "io.github.elifoster.dramasplash"
 archivesBaseName = "DramaSplash-1.8.9"
 

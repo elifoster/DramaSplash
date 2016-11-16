@@ -1,5 +1,10 @@
 # Changelog
 ## Version 2
+### 2.0.3
+* Now supports any version above 1.8, because I am sick of updating the accepted versions (thank
+you Maven for sucking at semantic versions; see Ruby `~>`). The code this modifies very rarely
+gets changed so I think this is fairly safe. Now works on 1.11.
+
 ### 2.0.2
 * Set the acceptedMinecraftVersions parameter to support 1.10.2.
 
