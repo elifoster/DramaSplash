@@ -53,6 +53,6 @@ public class DramaSplash {
             e.printStackTrace();
         }
 
-        return "Check your logs!";
+        return "Drama Generator fails to generate! [check your logs!]";
     }
 }
