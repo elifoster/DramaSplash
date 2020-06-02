@@ -1,4 +1,7 @@
 # Changelog
+## Version 4
+* Upgrade to Minecraft 1.14–1.15 (#5, #6).
+
 ## Version 3
 * Upgrade to Minecraft 1.13–1.13.2 (#4).
 

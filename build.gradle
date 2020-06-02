@@ -10,7 +10,7 @@ buildscript {
 }
 apply plugin: 'net.minecraftforge.gradle'
 
-version = '3.0.0'
+version = '4.0.0'
 group = 'io.github.elifoster.dramasplash' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'DramaSplash-1.14'
 

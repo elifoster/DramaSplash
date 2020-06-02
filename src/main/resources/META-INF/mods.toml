@@ -4,7 +4,7 @@ issueTrackerURL="https://github.com/elifoster/DramaSplash/issues"
 
 [[mods]]
   modId="drama_splash"
-  version="3.0.0"
+  version="4.0.0"
   displayName="Minecraft Drama Generator: Ruby Edition Splash"
   displayURL="https://www.curseforge.com/minecraft/mc-mods/drama-generator-ruby-edition-splash"
   credits="Mr_Okushama and Asie for the original drama generators."
