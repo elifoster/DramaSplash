@@ -39,7 +39,7 @@ public class DramaSplash {
 
     /**
      * Gets the splash from mc-drama's API
-     * @return The random drama, or "Check your logs!" if there is an IOException.
+     * @return The random drama, or "Drama Generator fails to generate! [check your logs!]" if there is an IOException.
      */
     private String getSplash() {
         try {
