@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 
-@Mod(name = "Drama Generator: Ruby Edition Splash", modid = "drama_splash", version = "2.0.3", acceptedMinecraftVersions = "[1.8,)")
+@Mod(name = "Drama Generator: Ruby Edition Splash", modid = "drama_splash", version = "2.0.3", acceptedMinecraftVersions = "[1.8,1.12.2]")
 public class DramaSplash {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
