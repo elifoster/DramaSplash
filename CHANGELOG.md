@@ -1,4 +1,7 @@
 # Changelog
+## Version 3
+* Upgrade to Minecraft 1.13–1.13.2 (#4).
+
 ## Version 2
 ### 2.0.4
 * Set max accepted Minecraft version to 1.12.2, as 1.13+ does not work yet.
