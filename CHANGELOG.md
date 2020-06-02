@@ -1,5 +1,11 @@
 # Changelog
 ## Version 2
+### 2.0.4
+* Set max accepted Minecraft version to 1.12.2, as 1.13+ does not work yet.
+* Change error splash text from "Check your logs!" to "Drama Generator fails to generate! [check your logs!]" (xbony2) (#2)
+* Change modid to match new Forge requirements as of Minecraft 1.11. This fixes the mod not loading properly on 1.11+.
+* Officially supports 1.12 now (#3).
+
 ### 2.0.3
 * Now supports any version above 1.8, because I am sick of updating the accepted versions (thank
 you Maven for sucking at semantic versions; see Ruby `~>`). The code this modifies very rarely
