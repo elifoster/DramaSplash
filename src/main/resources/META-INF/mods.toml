@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[25,)"
+issueTrackerURL="https://github.com/elifoster/DramaSplash/issues"
+
+[[mods]]
+  modId="drama_splash"
+  version="2.0.4"
+  displayName="Minecraft Drama Generator: Ruby Edition Splash"
+  displayURL="https://www.curseforge.com/minecraft/mc-mods/drama-generator-ruby-edition-splash"
+  credits="Mr_Okushama and Asie for the original drama generators."
+  authors="SatanicSanta"
+  description="Replaces default main menu splash text with generated drama about the modded Minecraft community."
+
+  [[dependencies.drama_splash]]
+    modId="forge"
+    mandatory=true
+    versionRange="[25,)"
+    ordering="NONE"
+    side="BOTH"
+
+  [[dependencies.drama_splash]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.13,1.13.2]"
+    ordering="NONE"
+    side="BOTH"

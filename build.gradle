@@ -1,37 +1,72 @@
 buildscript {
     repositories {
+        maven { url = 'https://files.minecraftforge.net/maven' }
+        jcenter()
         mavenCentral()
-        maven {
-            name = "forge"
-            url = "http://files.minecraftforge.net/maven"
-        }
-        maven {
-            name = "sonatype"
-            url = "https://oss.sonatype.org/content/repositories/snapshots/"
-        }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
+    }
+}
+apply plugin: 'net.minecraftforge.gradle'
 
+version = '2.0.4'
+group = 'io.github.elifoster.dramasplash' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'DramaSplash-1.13'
+
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
+
+minecraft {
+    mappings channel: 'stable', version: '47-1.13.2'
+    runs {
+        client {
+            workingDirectory project.file('eclipse')
+
+            // Recommended logging data for a userdev environment
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+
+            // Recommended logging level for the console
+            property 'forge.logging.console.level', 'debug'
+
+            mods {
+                drama_splash {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        server {
+            workingDirectory project.file('run')
+
+            // Recommended logging data for a userdev environment
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+
+            // Recommended logging level for the console
+            property 'forge.logging.console.level', 'debug'
+
+            mods {
+                drama_splash {
+                    source sourceSets.main
+                }
+            }
+        }
     }
 }
 
-apply plugin: 'net.minecraftforge.gradle.forge'
-
-version = "2.0.4"
-group = "io.github.elifoster.dramasplash"
-archivesBaseName = "DramaSplash-1.8.9"
-
-minecraft {
-    version = "1.8.9-11.15.1.1761"
-    mappings = "snapshot_20160224"
-    runDir = "eclipse"
-	replace "@VERSION@", project.version
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.13.2-25.0.219'
 }
 
-processResources {
-    from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
-        expand 'version':project.version, 'mcversion':project.minecraft.version
+jar {
+    manifest {
+        attributes([
+                "Specification-Title"     : "drama_splash",
+                "Specification-Vendor"    : "SatanicSanta",
+                "Specification-Version"   : "1", // We are version 1 of ourselves
+                "Implementation-Title"    : project.name,
+                "Implementation-Version"  : "${version}",
+                "Implementation-Vendor"   : "SatanicSanta",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
     }
 }
