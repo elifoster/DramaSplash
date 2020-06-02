@@ -1,13 +1,13 @@
 package io.github.elifoster.dramasplash;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiMainMenu;
-import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.gui.screen.MainMenuScreen;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
-import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,10 +22,10 @@ public class DramaSplash {
     @SubscribeEvent
     public static void render(TickEvent.RenderTickEvent event) {
         Minecraft minecraft = Minecraft.getInstance();
-        GuiScreen screen = minecraft.currentScreen;
-        if (event.side == LogicalSide.CLIENT && screen instanceof GuiMainMenu && !isSplashSet) {
-            GuiMainMenu menu = (GuiMainMenu) screen;
-            ObfuscationReflectionHelper.setPrivateValue(GuiMainMenu.class, menu, getSplash(), "field_73975_c");
+        Screen screen = minecraft.currentScreen;
+        if (event.side == LogicalSide.CLIENT && screen instanceof MainMenuScreen && !isSplashSet) {
+            MainMenuScreen menu = (MainMenuScreen) screen;
+            ObfuscationReflectionHelper.setPrivateValue(MainMenuScreen.class, menu, getSplash(), "field_73975_c");
             isSplashSet = true;
         }
     }
